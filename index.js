@@ -33,6 +33,17 @@ airRoutesAPI.httpCRUD(app);
 
 /*#################################################    Resource: culturaBASE    ################################################################*/
 
+//Import API
+var culturaBaseApi = require("./culturaBaseAPI");
+
+//l05: "./info/air_routes"
+culturaBaseApi.info(app);
+
+//loadInitialData
+culturaBaseApi.loadInitData(app);
+
+//CRUD: GET , POST, PUT, DELETE
+culturaBaseApi.httpCRUD(app);
 
 /*#################################################    Resource: hostelries    ################################################################*/
 

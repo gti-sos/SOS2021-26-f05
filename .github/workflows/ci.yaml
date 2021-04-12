@@ -12,3 +12,4 @@ jobs:
       - run: npm install
       - run: npm start &
       - run: npx newman run tests/hostelries_integration.json
+      - run: npx newman run tests/culturaBASE_integration.json
