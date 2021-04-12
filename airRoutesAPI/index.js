@@ -41,9 +41,12 @@ module.exports.httpCRUD = (app) => {
 
     //POST
     app.post(BASE_AIR_ROUTES_API_PATH, (req,res) => {
+        
         var newResource = req.body;
         console.log(`   -airRoutes API: New resource added <${JSON.stringify(newResource,null,2)}>`);
+        console.log(`   -airRoutes API: New resource added <${JSON.stringify(initJsonData.JsonInitialData)}>`);
         air_routes_aux.push(newResource);
+        console.log(`   -airRoutes API: New resource added <${JSON.stringify(initJsonData.JsonInitialData)}>`);
 
         res.sendStatus(201);
     });
@@ -134,11 +137,19 @@ module.exports.httpCRUD = (app) => {
             res.status(200).json({ message: `The resource with district : <${urlDistrict}> was deleted`})
         }else{
             res.status(404).json({ message: "District you are looking for does not exist "})
-        }
+        }   
+
+      /*   var urlDistrict = req.params.urlDistrict;
+    console.log(`contact to be deleted: <${urlDistrict}>`);
+
+    air_routes_aux = air_routes_aux.filter( (c) =>{
+        return (c.district != urlDistrict);
     });
+    res.sendStatus(200); */
+    }); 
 
 
-    app.delete(BASE_AIR_ROUTES_API_PATH + "/:urlDistrict/:urlYear", (req,res) => {
+     app.delete(BASE_AIR_ROUTES_API_PATH + "/:urlDistrict/:urlYear", (req,res) => {
 
         var {urlDistrict} = req.params;
         var {urlYear} = req.params;
@@ -151,7 +162,7 @@ module.exports.httpCRUD = (app) => {
         }else{
             res.status(404).json({ message: "The resource you are looking for does not exist "})
         }
-    });
+    }); 
 
     app.put(BASE_AIR_ROUTES_API_PATH + "/:urlDistrict/:urlYear", (req,res) => {
 

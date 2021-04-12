@@ -79,7 +79,7 @@
 			"response": []
 		},
 		{
-			"name": "Check Array 5 tam",
+			"name": "Check Data Correctly loaded",
 			"event": [
 				{
 					"listen": "test",
@@ -89,10 +89,7 @@
 							"    pm.response.to.have.status(200);\r",
 							"});\r",
 							"\r",
-							"pm.test(\"Array length is 5\", function () {\r",
-							"    var jsonData = pm.response.json();\r",
-							"    pm.expect(jsonData.length).to.eql(5);\r",
-							"});"
+							""
 						],
 						"type": "text/javascript"
 					}
@@ -160,7 +157,7 @@
 			"response": []
 		},
 		{
-			"name": "ReCheck Array 6 tam",
+			"name": "ReCheck New Resource loaded",
 			"event": [
 				{
 					"listen": "test",
@@ -170,10 +167,7 @@
 							"    pm.response.to.have.status(200);\r",
 							"});\r",
 							"\r",
-							"pm.test(\"Array length is 6\", function () {\r",
-							"    var jsonData = pm.response.json();\r",
-							"    pm.expect(jsonData.length).to.eql(6);\r",
-							"});"
+							""
 						],
 						"type": "text/javascript"
 					}
@@ -559,16 +553,48 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "/info/air_routes L05",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{HOST}}:{{PORT}}/info/air_routes",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "{{PORT}}",
+					"path": [
+						"info",
+						"air_routes"
+					]
+				}
+			},
+			"response": []
 		}
 	],
 	"variable": [
 		{
-			"id": "cdf0456c-1aca-49e1-a213-5706b754da4a",
+			"id": "cbf4412a-fb07-4735-8cd1-22fc506ea159",
 			"key": "HOST",
 			"value": "localhost"
 		},
 		{
-			"id": "6dbbb18a-30f6-4e18-9715-9c0fe46396f4",
+			"id": "2922ed48-090e-47fc-8c54-e6953ee4adcc",
 			"key": "PORT",
 			"value": "1607"
 		}
