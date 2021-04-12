@@ -1,0 +1,160 @@
+{
+	"info": {
+		"_postman_id": "7324e90c-a3ec-4335-a8f1-d026e21e4e2b",
+		"name": "SOS2021-f05-extra",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get inicial vacío",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:1607/api/v1/culturaBASE/",
+					"host": [
+						"localhost"
+					],
+					"port": "1607",
+					"path": [
+						"api",
+						"v1",
+						"culturaBASE",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get de carga",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Hay 5 contactos en el get su primo\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.length).to.eql(5);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:1607/api/v1/culturaBASE/loadInitialData",
+					"host": [
+						"localhost"
+					],
+					"port": "1607",
+					"path": [
+						"api",
+						"v1",
+						"culturaBASE",
+						"loadInitialData"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"district\": \"Andorra\",\r\n        \"year\": \"2019\",\r\n        \"fundraising\": 150.666,\r\n        \"spectator\": 1.4,\r\n        \"spending-per-view\": 15.4\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:1607/api/v1/culturaBASE/",
+					"host": [
+						"localhost"
+					],
+					"port": "1607",
+					"path": [
+						"api",
+						"v1",
+						"culturaBASE",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Borrado de recurso",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:1607/api/v1/culturaBASE/Andalucia/2019",
+					"host": [
+						"localhost"
+					],
+					"port": "1607",
+					"path": [
+						"api",
+						"v1",
+						"culturaBASE",
+						"Andalucia",
+						"2019"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
