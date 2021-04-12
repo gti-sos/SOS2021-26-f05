@@ -1,9 +1,6 @@
 var initJsonData = require("./initialData");
 var culturaBASE_html = require("./l05");
 
-
-
-
 var BASE_CULTURABASE_API_PATH = "/api/v1/culturaBASE";
 
 var r_culturaBASE = [];
