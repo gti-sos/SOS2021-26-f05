@@ -6,3 +6,5 @@
 
 + [Postman Documentation Portal by ](https://documenter.getpostman.com/view/14948205/TzJoE1Bm) [Mateo Serna Giraldo](https://github.com/keffren)
 
++ [Postman Documentation Portal by ](https://documenter.getpostman.com/view/9628248/TzJoDfw1) [José María Maya Cano](https://github.com/josemarimaya)
+
