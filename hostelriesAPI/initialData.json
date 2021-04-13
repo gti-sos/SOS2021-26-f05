@@ -1,4 +1,4 @@
-var hostelriesData = [
+[
     {
         "district"           :   "Andalucia",
         "year"              :   "2020",
@@ -34,6 +34,4 @@ var hostelriesData = [
         "establishment_open":   27213,
         "traveler_numer"    :   20045332
     }
-];
-
-module.exports.JsonInitialData = hostelriesData;
+]
